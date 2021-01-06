@@ -1,7 +1,5 @@
-import java.util.Objects;
-
 public abstract class Human implements HumanActions {
-    private String name;
+    private final String name;
 
     public Human(String name) {
         this.name = name;
@@ -13,10 +11,7 @@ public abstract class Human implements HumanActions {
 
     @Override
     public boolean equals(Object object){
-        if (this == object)
-            return true;
-        else
-            return false;
+        return this == object;
     }
 
     @Override
@@ -26,7 +21,6 @@ public abstract class Human implements HumanActions {
 
     @Override
     public int hashCode(){
-        int code = this.name.length();
-        return code;
+        return this.name.length();
     }
 }

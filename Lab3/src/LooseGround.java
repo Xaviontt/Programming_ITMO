@@ -1,15 +1,11 @@
 public class LooseGround {
-    private String looseGroundName;
-
-    public LooseGround(String looseGroundName) {
-        this.looseGroundName = looseGroundName;
-    }
+    private static final String looseGroundName = "Loose ground";
 
     public String getLooseGroundName() {
         return looseGroundName;
     }
 
-    void planted() {
+    void isPlantedWithBushes() {
         System.out.println(getLooseGroundName() + " is planted with " + Bushes.getBushesName());
     }
 

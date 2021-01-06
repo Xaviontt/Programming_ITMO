@@ -1,17 +1,7 @@
 public class Bushes {
-     static String bushesName;
-     static String bushesColour;
-
-    public Bushes(String bushesName, String bushesColour) {
-        this.bushesName = bushesName;
-        this.bushesColour = bushesColour;
-    }
+     static final String bushesName = "green bushes";
 
     public static String getBushesName() {
         return bushesName;
-    }
-
-    public static String getBushesColour() {
-        return bushesColour;
     }
 }

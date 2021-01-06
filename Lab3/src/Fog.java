@@ -4,7 +4,6 @@ public class Fog extends WeatherCondition implements FogChanges {
         super(weatherCondition);
     }
 
-
     @Override
     public void becomeClearer() {
         System.out.println(super.getWeatherCondition() + " become clearer");

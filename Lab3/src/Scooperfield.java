@@ -5,8 +5,8 @@ public class Scooperfield extends Human implements ScooperfieldActions {
     }
 
     @Override
-    public void touchWithCane(String touchedObject) {
-        System.out.println(super.getName() + " is touching the " + touchedObject + " with the cane");
+    public void touchGroundWithCane() {
+        System.out.println(getName() + " is touching the " + Ground.getGroundName() + " with the " + Cane.getCaneName());
     }
 
     @Override
@@ -18,11 +18,11 @@ public class Scooperfield extends Human implements ScooperfieldActions {
 
     @Override
     public void climbUp() {
-        System.out.println(super.getName() + " is climbing up");
+        System.out.println(getName() + " is climbing up");
         while (Math.random() < 0.5) {
             fallDown();
             fallCounter++;
-            System.out.println(super.getName() + " is climbing up");
+            System.out.println(getName() + " is climbing up");
         }
         reach(Location.SURFACE);
         fallCounter = 0;
@@ -31,69 +31,65 @@ public class Scooperfield extends Human implements ScooperfieldActions {
     @Override
     public void fallDown() {
         if (fallCounter == 0)
-            System.out.println(super.getName() + " fell and rolled down");
+            System.out.println(getName() + " fell and rolled down");
         else
-            System.out.println(super.getName() + " fell and rolled down again");
+            System.out.println(getName() + " fell and rolled down again");
     }
 
     @Override
     public void breath() {
-        System.out.println(super.getName() + " is breathing");
+        System.out.println(getName() + " is breathing");
     }
 
     @Override
     public void rest() {
-        System.out.println(super.getName() + " is resting");
+        System.out.println(getName() + " is resting");
     }
 
     @Override
     public void restAndBreath() {
-        System.out.println(super.getName() + " is resting and breathing");
+        System.out.println(getName() + " is resting and breathing");
     }
 
     @Override
-    public void pillOut(String pilledOutObject) {
-        System.out.println(super.getName() + " pilled out the " + pilledOutObject);
+    public void pillOutBush() {
+        System.out.println(getName() + " pilled out the " + Bushes.getBushesName());
     }
 
     @Override
-    public void examine(String examinedObject) {
-        System.out.println(super.getName() + " is examining the " + examinedObject);
+    public void examineTubers() {
+        System.out.println(getName() + " is examining " + Tubers.getTubersName());
     }
 
     @Override
-    public void guess(String guessAboutFact) {
-        System.out.println(super.getName() + " began to guess that " + guessAboutFact);
+    public void guessThat() {
+        System.out.print(getName() + " began to guess that ");
     }
 
     @Override
     public void beUnsure() {
-        System.out.println(super.getName() + " is unsure");
+        System.out.println(getName() + " is unsure");
     }
 
     @Override
-    public void saw(String seenFact) {
-        System.out.println(super.getName() + " saw " + seenFact);
+    public void saw() {
+        System.out.print(getName() + " saw ");
     }
 
     @Override
-    public void imagine(String imaginedFact) {
-        System.out.println(super.getName() + " imagined that " + imaginedFact);
+    public void imagineThat() {
+        System.out.print(getName() + " imagined that ");
     }
 
-    @Override
-    public void notice() {                                        // замечает факт который идёт
-        System.out.print(super.getName() + " noticed that ");     // следующим действием
-    }
 
     @Override
-    public void noticeSmth(String noticedObject) {                            // замечает нужный нам факт
-        System.out.println(super.getName() + " noticed " + noticedObject);
+    public void notice() {                                  // замечает факт который идёт
+        System.out.print(getName() + " noticed that ");     // следующим действием
     }
 
     @Override
     public void keepWalking() {
-        System.out.println(super.getName() + " keep walking");
+        System.out.println(getName() + " keep walking");
     }
 
 }

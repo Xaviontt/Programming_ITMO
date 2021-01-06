@@ -1,5 +1,5 @@
 public enum Location {
-    OPPOSITE_SLOPE("opposite slope"),
+    OPPOSITE_RAVINE_SLOPE("opposite slope of the ravine"),
     SURFACE("surface"),
     LOOSE_GROUND("loose ground");
 
