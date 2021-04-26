@@ -6,11 +6,7 @@ import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-/**
- * Главный класс, в котором создаются все экземпляры и запускается программа
- *
- * @author Byzova Valeriia
- */
+
 public class Main {
     public static void main(String[] args) {
         FileManager fileManager;
