@@ -18,7 +18,7 @@ public class ClearCommand extends AbstractCommand {
             System.out.println("Collection deleted");
             return true;
         } catch (IncorrectValueException e) {
-            System.err.println("This command has no parameters! Enter: show");
+            System.err.println("This command has no parameters! Enter: clear");
         }
         return false;
     }

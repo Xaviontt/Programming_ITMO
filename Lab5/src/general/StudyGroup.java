@@ -13,7 +13,7 @@ public class StudyGroup {
     private Semester semesterEnum; //Поле может быть null
     private Person groupAdmin; //Поле может быть null
 
-    public StudyGroup(Integer id, String name, Coordinates coordinates, LocalDate creationDate, Long studentsCount, int expelledStudents, float averageMark, Semester semesterEnum, Person groupAdmin) {
+    public StudyGroup(Integer id, String name, Coordinates coordinates, java.time.LocalDate creationDate, Long studentsCount, int expelledStudents, float averageMark, Semester semesterEnum, Person groupAdmin) {
         this.id = id;
         this.name = name;
         this.coordinates = coordinates;
@@ -61,5 +61,18 @@ public class StudyGroup {
         return groupAdmin;
     }
 
-
+    @Override
+    public String toString() {
+        return "StudyGroup{" +
+                "id =" + id +
+                " name = '" + name + '\'' + "\n" +
+                " coordinates = " + coordinates + "\n" +
+                " creationDate = " + creationDate + "\n" +
+                " studentsCount = " + studentsCount + "\n" +
+                " expelledStudents = " + expelledStudents + "\n" +
+                " averageMark = " + averageMark + "\n" +
+                " semesterEnum = " + semesterEnum + "\n" +
+                " groupAdmin = " + groupAdmin +
+                '}';
+    }
 }

@@ -3,7 +3,7 @@ package commands;
 import exceptions.IncorrectValueException;
 import utilities.CollectionManager;
 
-import java.time.LocalDateTime;
+import java.time.*;
 
 public class InfoCommand extends AbstractCommand {
     private CollectionManager collectionManager;
@@ -18,9 +18,9 @@ public class InfoCommand extends AbstractCommand {
         try {
             if (!arg.isEmpty()) throw new IncorrectValueException();
             System.out.println("Information about collection");
-            LocalDateTime lastInitTime = collectionManager.getLastInitTime();
+            LocalDate lastInitTime = collectionManager.getLastInitTime();
             String lastInitTimeString = (lastInitTime == null) ? "no initialization has occurred in this session yet" :
-                    lastInitTime.toLocalDate().toString() + " " + lastInitTime.toLocalTime().toString();
+                    lastInitTime.toString();
             System.out.println(" Type: " + collectionManager.collectionType());
             System.out.println(" Last initialization date: " + lastInitTimeString);
             System.out.println(" Number of elements: " + collectionManager.collectionSize());
