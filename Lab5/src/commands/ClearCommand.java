@@ -7,7 +7,8 @@ public class ClearCommand extends AbstractCommand {
     private CollectionManager collectionManager;
 
     public ClearCommand(CollectionManager collectionManager) {
-        super("clear", "clear collection");
+        super("clear", "очистить коллекцию");
+        this.collectionManager = collectionManager;
     }
 
     @Override
@@ -15,10 +16,10 @@ public class ClearCommand extends AbstractCommand {
         try {
             if (!arg.isEmpty()) throw new IncorrectValueException();
             collectionManager.clear();
-            System.out.println("Collection deleted");
+            System.out.println("Коллекция удалена");
             return true;
         } catch (IncorrectValueException e) {
-            System.err.println("This command has no parameters! Enter: clear");
+            System.err.println("У этой команды нет парамметров! Введите: clear");
         }
         return false;
     }

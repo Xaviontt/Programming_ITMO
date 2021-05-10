@@ -4,7 +4,7 @@ import exceptions.IncorrectValueException;
 
 public class HelpCommand extends AbstractCommand {
     public HelpCommand() {
-        super("help", "display help for available commands");
+        super("help", "вывести справку по доступным командам");
     }
 
     @Override
@@ -13,7 +13,7 @@ public class HelpCommand extends AbstractCommand {
             if (!arg.isEmpty()) throw new IncorrectValueException();
             return true;
         } catch (IncorrectValueException e) {
-            System.err.println("This command has no parameters! Enter: help");
+            System.err.println("У этой команды нет параметров! Введите: help");
         }
         return false;
     }

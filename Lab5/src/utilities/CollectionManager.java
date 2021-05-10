@@ -132,4 +132,110 @@ public class CollectionManager {
             if (checker = false) throw new NullPointerException();
         }
     }
+
+
+    public int countStudents(Long students) {
+        int count = 0;
+
+        for (StudyGroup s : hashMap.values()) {
+            if (s.getStudentsCount() == students) {
+
+                count += 1;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * Заменяет значение по ключу, если оно больше
+     *
+     * @param key ключ
+     */
+    public void replaceIfGreater(Integer key) {
+        try {
+            StudyGroup studyGroup = new StudyGroup(hashMap.get(key).getId(), creator.newStudyGroup(), creator.newCoordinates(), LocalDate.now(), creator.newStudentsCount(), creator.newExpelledStudents(), creator.newAverageMark(), creator.newSemester(), creator.newGroupAdmin());
+            if (hashMap.get(key).compareTo(studyGroup) < 0) {
+                hashMap.put(key, studyGroup);
+                System.out.println("\u001B[37m" + "\u001B[33m" + "Группа с ключом " + key + " была успешно заменена" + "\u001B[33m" + "\u001B[37m");
+
+            } else {
+                System.out.println("\u001B[37m" + "\u001B[33m" + "Группа с ключом " + key + " не была заменена, так как меньше или равна уже существующей" + "\u001B[33m" + "\u001B[37m");
+            }
+        } catch (NullPointerException e) {
+            System.err.println("Элемента с таким ключом не существует");
+        }
+    }
+
+    public int removeGreater(Integer number) {
+        List<Integer> a = new ArrayList<>();
+        for (Map.Entry<Integer, StudyGroup> e : hashMap.entrySet()) {
+            if (e.getValue().getStudentsCount() > number) {
+
+                a.add(e.getKey());
+            }
+        }
+
+        for (Integer i : a) {
+            hashMap.remove(i);
+        }
+        return a.size();
+    }
+
+    public int removeLower(Integer number) {
+        List<Integer> a = new ArrayList<>();
+        for (Map.Entry<Integer, StudyGroup> e : hashMap.entrySet()) {
+            if (e.getValue().getStudentsCount() < number) {
+
+                a.add(e.getKey());
+            }
+        }
+
+        for (Integer i : a) {
+            hashMap.remove(i);
+        }
+        return a.size();
+    }
+
+    /**
+     * Находит ключ элемента по его ID
+     *
+     * @param id id
+     * @return ключ
+     */
+    public Integer getKeyById(Integer id) {
+        for (Map.Entry<Integer, StudyGroup> e : hashMap.entrySet()) {
+            if (e.getValue().getId().equals(id)) return e.getKey();
+        }
+        return null;
+    }
+
+    /**
+     * Заменяет элемент по ключу
+     *
+     * @param key        ключ
+     * @param studyGroup значение
+     */
+    public void update(Integer key, StudyGroup studyGroup) {
+        hashMap.remove(key);
+        hashMap.put(key, studyGroup);
+    }
+
+    public ArrayList<Long> sortedByStudentsCount() {
+        ArrayList<Long> a = new ArrayList<>();
+        for (Map.Entry<Integer, StudyGroup> e : hashMap.entrySet()) {
+            a.add(e.getValue().getStudentsCount());
+        }
+        Collections.sort(a);
+        Collections.reverse(a);
+        return a;
+    }
+
+    public Set<Float> uniqueAverageMark() {
+        Set<Float> set = new HashSet<Float>();
+        for (Map.Entry<Integer, StudyGroup> e : hashMap.entrySet()) {
+            set.add(e.getValue().getAverageMark());
+        }
+        return set;
+    }
 }
+

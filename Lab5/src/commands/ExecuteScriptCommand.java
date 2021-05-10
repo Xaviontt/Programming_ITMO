@@ -4,7 +4,7 @@ import exceptions.EmptyArgumentException;
 
 public class ExecuteScriptCommand extends AbstractCommand {
     public ExecuteScriptCommand() {
-        super("execute script filename", "read and execute a script from the specified file. The script contains commands in the same form in which the user enters them interactively.");
+        super("execute_script filename", "считать и исполнить скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме.");
     }
 
 
@@ -14,7 +14,7 @@ public class ExecuteScriptCommand extends AbstractCommand {
             if (arg.isEmpty()) throw new EmptyArgumentException();
             return true;
         } catch (EmptyArgumentException e) {
-            System.err.println("This command must have an argument (filename to read the script)");
+            System.err.println("У этой команды должен быть аргумент (имя файла для чтения скрипта)");
             return false;
         }
     }

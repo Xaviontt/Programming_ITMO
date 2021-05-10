@@ -1,8 +1,20 @@
 package general;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Objects;
+
+/**
+ * X-Y coordinates.
+ */
+@XmlRootElement(name="coordinates")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Coordinates {
     private float x;
     private Float y; //Поле не может быть null
+
+    public Coordinates() {}
 
     public Coordinates(float x, Float y) {
         this.x = x;

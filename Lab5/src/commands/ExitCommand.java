@@ -4,7 +4,7 @@ import exceptions.IncorrectValueException;
 
 public class ExitCommand extends AbstractCommand {
     public ExitCommand() {
-        super("exit", "terminate the program without saving to file");
+        super("exit", "завершить программу (без сохранения в файл)");
     }
 
     @Override
@@ -13,7 +13,7 @@ public class ExitCommand extends AbstractCommand {
             if (!arg.isEmpty()) throw new IncorrectValueException();
             return true;
         } catch (IncorrectValueException e) {
-            System.err.println("This command has no parameters! You must enter: exit");
+            System.err.println("У этой команды нет парамтров! Введите: exit");
         }
         return false;
     }

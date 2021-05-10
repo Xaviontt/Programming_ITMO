@@ -42,7 +42,7 @@ public class Console {
             } while (status != 2);
         } catch (NoSuchElementException e) {
             commandManager.save("");
-            System.out.println("Программа завершилась с охранением коллекции в файл");
+            System.out.println("Программа завершилась с сохранением коллекции в файл");
 
         }
     }
@@ -140,20 +140,20 @@ public class Console {
             case "replace_if_greater":
                 if (!commandManager.replaceIfGreater(userCommand[1])) return 1;
                 break;
-            case "replace_if_lower":
-                if (!commandManager.replaceIfLower(userCommand[1])) return 1;
+            case "remove_greater":
+                if (!commandManager.removeGreater(userCommand[1])) return 1;
                 break;
-            case "remove_lower_key":
-                if (!commandManager.removeLowerKey(userCommand[1])) return 1;
+            case "remove_lower":
+                if (!commandManager.removeLower(userCommand[1])) return 1;
                 break;
-            case "remove_all_by_number_of_rooms":
-                if (!commandManager.removeAllByNumber(userCommand[1])) return 1;
+            case "print_field_descending_students_count":
+                if (!commandManager.printFieldDescendingStudentsCount(userCommand[1])) return 1;
                 break;
-            case "count_greater_than_furnish":
-                if (!commandManager.countFurnish(userCommand[1])) return 1;
+            case "count_by_students_count":
+                if (!commandManager.countByStudentsCountCommand(userCommand[1])) return 1;
                 break;
-            case "filter_starts_with_name":
-                if (!commandManager.filterName(userCommand[1])) return 1;
+            case "print_unique_average_mark":
+                if (!commandManager.printUniqueAverageMark(userCommand[1])) return 1;
                 break;
             default:
                 System.out.println("Команда " + userCommand[0] + " не найдена. Введите help для справки.");

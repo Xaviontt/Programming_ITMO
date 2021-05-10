@@ -16,7 +16,7 @@ import java.util.*;
 public class StudyGroups {
 
     @XmlElement(name="StudyGroup")
-    private HashMap<Integer, StudyGroup> studyGroups = null;
+    private HashMap<Integer, StudyGroup> studyGroups = new HashMap<Integer,StudyGroup>();
 
     public StudyGroups() {
     }

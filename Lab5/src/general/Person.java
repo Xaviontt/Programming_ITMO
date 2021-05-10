@@ -1,5 +1,12 @@
 package general;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Objects;
+
+@XmlRootElement(name="groupAdmin")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Person {
     private String name; //Поле не может быть null, Строка не может быть пустой
     private float weight; //Значение поля должно быть больше 0
@@ -14,6 +21,8 @@ public class Person {
         this.hairColor = hairColor;
         this.location = location;
     }
+
+    public Person() {}
 
     public String getName() {
         return name;

@@ -1,5 +1,12 @@
 package general;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Objects;
+
+@XmlRootElement(name="location")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Location {
     private int x;
     private int y;
@@ -10,6 +17,8 @@ public class Location {
         this.y = y;
         this.z = z;
     }
+
+    public Location() {}
 
     public int getX() {
         return x;

@@ -12,7 +12,7 @@ public class InsertCommand extends AbstractCommand {
     private Creator creator;
 
     public InsertCommand(CollectionManager collectionManager, Creator creator) {
-        super("insert null {element}", "add a new element with the given key");
+        super("insert null {element}", "добавить новый элемент с заданным ключом");
         this.collectionManager = collectionManager;
         this.creator = creator;
     }
@@ -29,8 +29,7 @@ public class InsertCommand extends AbstractCommand {
             if (argument.isEmpty()) throw new EmptyArgumentException();
             int key = Integer.parseInt(argument);//доделать проверку на наличие уже такого ключа в коллекции
             collectionManager.Key(key);
-            LocalDate localDate = LocalDate.now();
-            collectionManager.insertNew(key, new StudyGroup(collectionManager.newId(), creator.newStudyGroup(), creator.newCoordinates(), localDate, creator.newStudentsCount(), creator.newExpelledStudents(), creator.newAverageMark(), creator.newSemester(), creator.newGroupAdmin()));
+            collectionManager.insertNew(key, new StudyGroup(collectionManager.newId(), creator.newStudyGroup(), creator.newCoordinates(), LocalDate.now(), creator.newStudentsCount(), creator.newExpelledStudents(), creator.newAverageMark(), creator.newSemester(), creator.newGroupAdmin()));
             System.out.println("\u001B[37m" + "\u001B[33m" + "Элемент с заданным ключом успешно добавлен" + "\u001B[33m" + "\u001B[37m");
             return true;
         } catch (EmptyArgumentException e) {

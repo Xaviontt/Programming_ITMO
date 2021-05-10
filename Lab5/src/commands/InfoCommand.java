@@ -9,7 +9,7 @@ public class InfoCommand extends AbstractCommand {
     private CollectionManager collectionManager;
 
     public InfoCommand(CollectionManager cm) {
-        super("info", "print information about the collection (type, date of initialization, number of elements, etc.) to the standard output stream");
+        super("info", "вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)");
         this.collectionManager = cm;
     }
 
@@ -25,7 +25,7 @@ public class InfoCommand extends AbstractCommand {
             System.out.println(" Last initialization date: " + lastInitTimeString);
             System.out.println(" Number of elements: " + collectionManager.collectionSize());
         } catch (IncorrectValueException e) {
-            System.err.println("This command has no parameters! Enter: info");
+            System.err.println("У этой команды нет параметров! Введите: info");
         }
         return false;
     }
