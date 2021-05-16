@@ -58,7 +58,7 @@ public class FileManager {
                 System.out.println("Коллекция успешна сохранена в файл!");
             } catch (JAXBException e) {
                 System.err.println("Ошибка сохранения в файл!");
-                e.printStackTrace();
+//                e.printStackTrace();
 //            } catch (IOException e) {
 //                System.err.println("Ошибка сохранения в файл! Потоки");
 //            } catch (FileException e) {

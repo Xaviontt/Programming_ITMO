@@ -26,12 +26,12 @@ public class Creator {
         String studyGroupName = "";
         while (t) {
             try {
-                System.out.println("Enter group name");
+                System.out.println("Введите имя группы");
                 studyGroupName = scanner.nextLine().trim();
                 if (studyGroupName.equals("")) throw new IncorrectValueException();
                 t = false;
             } catch (IncorrectValueException e) {
-                System.err.println("Group name cannot be an empty string");
+                System.err.println("Имя группы не может быть пустой строкой");
             }
         }
         return studyGroupName;
@@ -41,14 +41,14 @@ public class Creator {
         float x = 0.0f;
         Float y = 0.0F;
         t = true;
-        System.out.println("Enter group coordinates");
+        System.out.println("Введите координаты группы");
         while (t) {
             try {
                 System.out.println("x:");
                 x = Float.parseFloat(scanner.nextLine().trim());
                 t = false;
             } catch (NumberFormatException e) {
-                System.err.println("Coordinate can only be a number");
+                System.err.println("Координаты могут быть только числом");
             }
         }
         t = true;
@@ -58,7 +58,7 @@ public class Creator {
                 y = Float.parseFloat(scanner.nextLine().trim());
                 t = false;
             } catch (NumberFormatException e) {
-                System.err.println("Coordinate can only be a number");
+                System.err.println("Координаты могут быть только числом");
             }
         }
         return new Coordinates(x, y);
@@ -69,14 +69,14 @@ public class Creator {
         t = true;
         while (t) {
             try {
-                System.out.println("Enter number of students");
+                System.out.println("Введите количество студентов");
                 students = Long.parseLong(scanner.nextLine().trim());
                 if (students <= 0) throw new IncorrectValueException();
                 t = false;
             } catch (NumberFormatException e) {
-                System.err.println("Number of students can only be an integer");
+                System.err.println("Количество студентов может быть только целым числом");
             } catch (IncorrectValueException e) {
-                System.err.println("Number of students can only be a positive number");
+                System.err.println("Количество студентов должно быть > 0");
             }
         }
         return students;
@@ -87,14 +87,14 @@ public class Creator {
         t = true;
         while (t) {
             try {
-                System.out.println("Enter number of expelled students");
+                System.out.println("Введите количество отчисленных студентов");
                 exStudents = Integer.parseInt(scanner.nextLine().trim());
                 if (exStudents <= 0) throw new IncorrectValueException();
                 t = false;
             } catch (NumberFormatException e) {
-                System.err.println("Number of expelled students can only be an integer");
+                System.err.println("Количество отчисленных студентов может быть только целым числом");
             } catch (IncorrectValueException e) {
-                System.err.println("Number of expelled students can only be a positive number");
+                System.err.println("Количество отчисленных студентов должно быть > 0");
             }
         }
         return exStudents;
@@ -105,12 +105,12 @@ public class Creator {
         t = true;
         while (t) {
             try {
-                System.out.println("Enter average mark");
+                System.out.println("Введите среднюю оценку");
                 mark = Float.parseFloat(scanner.nextLine().trim());
                 if (mark <= 0) throw new IncorrectValueException();
                 t = false;
             } catch (IncorrectValueException e) {
-                System.err.println("Number of expelled students can only be a positive number");
+                System.err.println("Средняя оценка должна быть > 0");
             }
         }
         return mark;
@@ -177,7 +177,7 @@ public class Creator {
         t = true;
         while (t) {
             try {
-                System.out.println("Введите семестр");
+                System.out.println("Введите цвет глаз админа");
                 System.out.println("Выберете из следующих вариантов: " + col);
                 adminEyeColor = Color.valueOf(scanner.nextLine().trim().toUpperCase());
                 t = false;
@@ -212,7 +212,7 @@ public class Creator {
                 x = Integer.parseInt(scanner.nextLine().trim());
                 t = false;
             } catch (NumberFormatException e) {
-                System.err.println("Coordinate can only be a number");
+                System.err.println("Координты должны быть только числом");
             }
         }
         t = true;
@@ -222,7 +222,7 @@ public class Creator {
                 y = Integer.parseInt(scanner.nextLine().trim());
                 t = false;
             } catch (NumberFormatException e) {
-                System.err.println("Coordinate can only be a number");
+                System.err.println("Координты должны быть только числом");
             }
         }
         t = true;
@@ -232,7 +232,7 @@ public class Creator {
                 z = Long.parseLong(scanner.nextLine().trim());
                 t = false;
             } catch (NumberFormatException e) {
-                System.err.println("Coordinate can only be a number");
+                System.err.println("Координты должны быть только числом");
             }
         }
 

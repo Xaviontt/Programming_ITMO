@@ -23,11 +23,6 @@ public class CommandManager {
     private AbstractCommand clearCommand;
     private AbstractCommand exitCommand;
     private AbstractCommand replaceIfGreaterCommand;
-    private AbstractCommand replaceIfLowerCommand;
-    private AbstractCommand removeLowerKeyCommand;
-    private AbstractCommand removeAllByNumberOfRoomsCommand;
-    private AbstractCommand countFurnishCommand;
-    private AbstractCommand filterNameCommand;
     private AbstractCommand countByStudentsCountCommand;
     private AbstractCommand removeGreaterCommand;
     private AbstractCommand removeLowerCommand;
@@ -100,71 +95,6 @@ public class CommandManager {
 
     }
 
-//    public CommandManager(AbstractCommand helpCommand,
-//                          AbstractCommand infoCommand,
-//                          AbstractCommand showCommand,
-//                          AbstractCommand insertCommand,
-//                          AbstractCommand updateIdCommand,
-//                          AbstractCommand removeKeyCommand,
-//                          AbstractCommand saveCommand,
-//                          AbstractCommand clearCommand,
-//                          AbstractCommand executeScriptCommand,
-//                          AbstractCommand exitCommand,
-//                          AbstractCommand replaceIfGreaterCommand,
-//                          AbstractCommand replaceIfLowerCommand,
-//                          AbstractCommand removeLowerKeyCommand,
-//                          AbstractCommand removeAllByNumberOfRoomsCommand,
-//                          AbstractCommand countFurnishCommand,
-//                          AbstractCommand filterNameCommand) {
-//
-//        this.helpCommand = helpCommand;
-//        commands.add(helpCommand);
-//
-//        this.infoCommand = infoCommand;
-//        commands.add(infoCommand);
-//
-//        this.showCommand = showCommand;
-//        commands.add(showCommand);
-//
-//        this.insertCommand = insertCommand;
-//        commands.add(insertCommand);
-//
-//        this.updateIdCommand = updateIdCommand;
-//        commands.add(updateIdCommand);
-//
-//        this.removeKeyCommand = removeKeyCommand;
-//        commands.add(removeKeyCommand);
-//
-//        this.saveCommand = saveCommand;
-//        commands.add(saveCommand);
-//
-//        this.clearCommand = clearCommand;
-//        commands.add(clearCommand);
-//
-//        this.executeScriptCommand = executeScriptCommand;
-//        commands.add(executeScriptCommand);
-//
-//        this.exitCommand = exitCommand;
-//        commands.add(exitCommand);
-//
-//        this.replaceIfGreaterCommand = replaceIfGreaterCommand;
-//        commands.add(replaceIfGreaterCommand);
-//
-//        this.replaceIfLowerCommand = replaceIfLowerCommand;
-//        commands.add(replaceIfLowerCommand);
-//
-//        this.removeLowerKeyCommand = removeLowerKeyCommand;
-//        commands.add(removeLowerKeyCommand);
-//
-//        this.removeAllByNumberOfRoomsCommand = removeAllByNumberOfRoomsCommand;
-//        commands.add(removeAllByNumberOfRoomsCommand);
-//
-//        this.countFurnishCommand = countFurnishCommand;
-//        commands.add(countFurnishCommand);
-//
-//        this.filterNameCommand = filterNameCommand;
-//        commands.add(filterNameCommand);
-//    }
 
     /**
      * Выводит все доступные команды с описанием
@@ -262,35 +192,6 @@ public class CommandManager {
         return removeKeyCommand.execute(argument);
     }
 
-    /**
-     * Запускает команду удаления элементов по количеству комнат
-     *
-     * @param argument это переданный аргумент
-     * @return состояние работы программы
-     */
-    public boolean removeAllByNumber(String argument) {
-        return removeAllByNumberOfRoomsCommand.execute(argument);
-    }
-
-    /**
-     * Запускает команду удаления элементов с ключом меньшим чем заданный
-     *
-     * @param argument это переданный аргумент
-     * @return состояние работы программы
-     */
-    public boolean removeLowerKey(String argument) {
-        return removeLowerKeyCommand.execute(argument);
-    }
-
-    /**
-     * Запускает команду, которая выводит элементы по имени
-     *
-     * @param argument это переданный аргумент
-     * @return состояние работы программы
-     */
-    public boolean filterName(String argument) {
-        return filterNameCommand.execute(argument);
-    }
 
     /**
      * Запускает команду выполнения скрипта
@@ -312,25 +213,6 @@ public class CommandManager {
         return replaceIfGreaterCommand.execute(argument);
     }
 
-    /**
-     * Запускает команду замены элемента, если он меньше
-     *
-     * @param argument это переданный аргумент
-     * @return состояние работы программы
-     */
-    public boolean replaceIfLower(String argument) {
-        return replaceIfLowerCommand.execute(argument);
-    }
-
-    /**
-     * Запускает команду подсчета кол-ва элементов с определенной отделкой
-     *
-     * @param argument это переданный аргумент
-     * @return состояние работы программы
-     */
-    public boolean countFurnish(String argument) {
-        return countFurnishCommand.execute(argument);
-    }
 
     public boolean countByStudentsCountCommand(String argument) {
         return countByStudentsCountCommand.execute(argument);

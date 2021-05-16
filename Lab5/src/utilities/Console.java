@@ -32,12 +32,13 @@ public class Console {
         int status = 0;
         try {
             do {
-                System.out.println("\u001B[37m" + "\u001B[36m" + "Введите желаемую команду" + "\u001B[36m" + "\u001B[37m");
+//                System.out.println("\u001B[37m" + "\u001B[36m" + "Введите желаемую команду" + "\u001B[36m" + "\u001B[37m");
+                System.out.print("$");
                 userCommand = (scanner.nextLine().trim() + " ").split(" ", 2);
                 userCommand[1] = userCommand[1].trim();
 
                 status = executeCommand(userCommand);
-                System.out.println();
+//                System.out.println();
 
             } while (status != 2);
         } catch (NoSuchElementException e) {
@@ -63,16 +64,20 @@ public class Console {
             System.out.println("У указанного файла нет прав на чтение, необходимо  установить");
             return 1;
         }
-        //if (!file.canRead()){System.out.println("У указанного файла нет прав на чтение, необходимо  установить");}
+
         try (Scanner scanner2 = new Scanner(file)) {
 
             if (!scanner2.hasNext()) throw new NoSuchElementException();
             Scanner oldScanner = creator.getScanner();
-            int status = 0;
+            int status;
             creator.setScanner(scanner2);
             do {
                 userCommand = (scanner2.nextLine().trim() + " ").split(" ", 2);
                 userCommand[1] = userCommand[1].trim();
+                while (scanner2.hasNextLine() && userCommand[0].isEmpty()){
+                    userCommand = (scanner2.nextLine().trim() + " ").split(" ",2);
+                    userCommand[1] = userCommand[1].trim();
+                }
                 System.out.println("\u001B[37m" + "\u001B[33m" + " Выполняется команда " + userCommand[0] + "\u001B[33m" + "\u001B[37m");
                 if (userCommand[0].equals("execute_script")) {
                     for (String name : scriptFileNames) {
@@ -80,13 +85,16 @@ public class Console {
                     }
 
                 }
-                status = executeCommand(userCommand);
+//                status = executeCommand(userCommand);
+                executeCommand(userCommand);
+                status = 0;
             } while (status == 0 && scanner2.hasNextLine());
             creator.setScanner(oldScanner);
+            return status;
 
 
         } catch (FileNotFoundException e) {
-            System.out.println("Файл со скриптом не найден :(");
+            System.out.println("Файл со скриптом не найден");
         } catch (NoSuchElementException e) {
             System.err.println("Файл пуст...");
         } catch (ScriptRecursionException e) {

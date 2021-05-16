@@ -29,7 +29,7 @@ public class CollectionManager {
     public String getStringElements() {
         String elements = "";
         if (hashMap.isEmpty())
-            System.out.println("Collection is empty :(");
+            System.out.println("Коллекция пуста");
         for (Map.Entry<Integer, StudyGroup> map : hashMap.entrySet()) {
             StudyGroup studyGroup = map.getValue();
             Integer key = map.getKey();

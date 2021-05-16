@@ -1,0 +1,16 @@
+insert 3
+P3112
+12
+15
+70
+10
+5
+second
+Vasya
+70
+red
+red
+10
+10
+10
+show
