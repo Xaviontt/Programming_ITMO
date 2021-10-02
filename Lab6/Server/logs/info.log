@@ -1,0 +1,18 @@
+сен 02, 2021 12:35:14 PM utility.LoggerUtility info
+INFO: Коллекция успешно загружена!
+сен 02, 2021 12:35:14 PM utility.LoggerUtility info
+INFO: Запуск сервера...
+сен 02, 2021 12:35:14 PM utility.LoggerUtility info
+INFO: Сервер успешно запущен
+сен 02, 2021 12:36:08 PM utility.LoggerUtility info
+INFO: Соединение с клиентом успешно установлено
+сен 02, 2021 12:36:18 PM utility.LoggerUtility info
+INFO: Обрабатывается команда help
+сен 02, 2021 12:36:54 PM utility.LoggerUtility info
+INFO: Обрабатывается команда show
+сен 02, 2021 12:37:00 PM utility.LoggerUtility info
+INFO: Обрабатывается команда info
+сен 02, 2021 12:37:10 PM utility.LoggerUtility info
+INFO: Обрабатывается команда exit
+сен 02, 2021 12:37:10 PM utility.LoggerUtility info
+INFO: Коллекция успешна сохранена в файл!

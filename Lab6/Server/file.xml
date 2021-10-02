@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StudyGroups>
+    <studyGroups>
+        <entry>
+            <key>1</key>
+            <value>
+                <id>1</id>
+                <name>P3212</name>
+                <coordinates>
+                    <x>10.0</x>
+                    <y>20.0</y>
+                </coordinates>
+                <creationDate>2021-09-01</creationDate>
+                <studentsCount>15</studentsCount>
+                <expelledStudents>3</expelledStudents>
+                <averageMark>4.0</averageMark>
+                <semesterEnum>SECOND</semesterEnum>
+                <groupAdmin>
+                    <name>Masha</name>
+                    <weight>40.0</weight>
+                    <eyeColor>GREEN</eyeColor>
+                    <hairColor>BLACK</hairColor>
+                    <location>
+                        <x>50</x>
+                        <y>40</y>
+                        <z>80</z>
+                    </location>
+                </groupAdmin>
+            </value>
+        </entry>
+    </studyGroups>
+</StudyGroups>
